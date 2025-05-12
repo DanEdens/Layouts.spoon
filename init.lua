@@ -188,7 +188,7 @@ function obj:loadLayout()
         self.layouts =hs.json.decode(readjson)
         f:close()
     end
-    obj.logger.df(hs.inspect(self.layouts))
+    -- obj.logger.df(hs.inspect(self.layouts))
 
 end
 
