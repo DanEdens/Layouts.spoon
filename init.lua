@@ -31,7 +31,7 @@ local visible = false
 
 
 function obj:_layouts2File()
-    local lf  = io.open(hs.fs.pathToAbsolute("~/.hammerspoon/layouts.json"),'w')
+    local lf = io.open(hs.fs.pathToAbsolute("~/.hammerspoon/data/layouts.json"), 'w')
 --    result = hs.json.encode(obj.layouts)
     result = hs.json.encode(obj.layouts, true)
     lf:write(result)
@@ -133,8 +133,8 @@ function obj:positionApp(app, appTitle, monitorUUID, frame)
 --    We need to do some sanity checks
 --    Check to see if the frame size is within the Screen size bounds
 --    Ignore the positioning if that is the case.
---    When saving layouts, we are getting Finder window size that is the 
---    size of both the monitors. 
+    --    When saving layouts, we are getting Finder window size that is the
+    --    size of both the monitors.
     screen = hs.screen(monitorUUID)
 --    obj.logger.df(hs.inspect(screen:fullFrame()))
     sf = screen:fullFrame().table
@@ -183,7 +183,7 @@ end
 
 function obj:loadLayout()
     local f = io.open(hs.fs.pathToAbsolute("~/.hammerspoon/layouts.json"),'r')
-    if f ~= nil then 
+    if f ~= nil then
         local readjson= f:read("*a")
         self.layouts =hs.json.decode(readjson)
         f:close()
