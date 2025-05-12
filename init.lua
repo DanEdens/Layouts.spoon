@@ -182,7 +182,7 @@ end
 
 
 function obj:loadLayout()
-    local f = io.open(hs.fs.pathToAbsolute("~/.hammerspoon/layouts.json"),'r')
+    local f = io.open(hs.fs.pathToAbsolute("~/.hammerspoon/data/layouts.json"), 'r')
     if f ~= nil then
         local readjson= f:read("*a")
         self.layouts =hs.json.decode(readjson)
