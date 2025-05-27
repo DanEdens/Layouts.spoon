@@ -62,8 +62,8 @@ local function menuClickCallback(mods)
     else
         obj.logger.df('obj.layouts is NIL, it should not be')
     end
-    obj.logger.df('Printing menuItems in menuClickCallback')
-    obj.logger.df(hs.inspect(menuItems))
+    -- obj.logger.df('Printing menuItems in menuClickCallback')
+    -- obj.logger.df(hs.inspect(menuItems))
     return menuItems
 end
 
